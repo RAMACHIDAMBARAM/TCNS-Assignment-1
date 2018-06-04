@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="Number">ID</Data></Cell>
+        <Cell><Data ss:Type="String">order code</Data></Cell>
+        <Cell><Data ss:Type="String">Current Status</Data></Cell>
+        <Cell><Data ss:Type="String">Remarks</Data></Cell>
+        <Cell><Data ss:Type="String">Promise Date</Data></Cell>
+        <Cell><Data ss:Type="String">First Attempt Date</Data></Cell>
+        <Cell><Data ss:Type="String">Last Attempt Date</Data></Cell>
+        <Cell><Data ss:Type="String">Expected Date</Data></Cell>
+        <Cell><Data ss:Type="String">First Bagging Date</Data></Cell>
+        <Cell><Data ss:Type="String">Type</Data></Cell>
+        <Cell><Data ss:Type="String">Amount</Data></Cell>
+        <Cell><Data ss:Type="String">Delivered</Data></Cell>
+        <Cell><Data ss:Type="String">Returned</Data></Cell>
+        <Cell><Data ss:Type="String">RTO</Data></Cell>
+        <Cell><Data ss:Type="String">Picked Up</Data></Cell>
+        <Cell><Data ss:Type="String">DTO</Data></Cell>
+        <Cell><Data ss:Type="String">Canceled</Data></Cell>
+        <Cell><Data ss:Type="String">awb no</Data></Cell>
+        <Cell><Data ss:Type="String">awb status</Data></Cell>
+
+      </Row>
+    <% @products.each do |product| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= product.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.order_no %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.current_status %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.remarks %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.promise_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.first_attempt_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.last_attempt_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.expected_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.first_bagging_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.payment_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.amount %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.delivered %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.returned %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.rto %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.picked_up %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.dto %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.canceled %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.awb_no %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.awb_status%></Data></Cell>
+
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

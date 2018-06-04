@@ -1,5 +1,14 @@
 class ProductsController < ApplicationController
 
+ def index
+    @products =  Product.order(:order_no)
+    respond_to do |format|
+    format.html
+    format.csv { send_data @products.to_csv, filename: "Master-CSV-#{Date.today}.csv" }
+    format.xls #{ send_data @products.to_csv(col_sep: "\t"), filename: "Master-CSV-#{Date.today}.xls" }
+    end
+  end
+
 	def import
 	  file = params[:file]
       spreadsheet = Roo::Spreadsheet.open(file)
