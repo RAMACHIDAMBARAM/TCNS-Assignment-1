@@ -1,0 +1,24 @@
+<h1 style ="position: relative; padding-left: 435px;">Order To Delivery</h1>
+
+<h2>Import Products</h2>
+
+<p>
+  Download:
+  <%= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
+
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<h4> 
+	NOTICE:
+	<br>
+	<ul>
+<li>
+As its a free hosting site, Please Upload max of 250 records per import.
+else the server will be timeout
+</li>
+</h4>
